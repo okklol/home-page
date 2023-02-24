@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+    --black: #000000;
+    --pink: #F7C8E0;
+    --pink-hotter: hsl(329, 75%, 70%);
+    --white: #ffffff;
+    --title-height: 6vh;
+    --card-height: 60vh;
+    --nav-height: 7vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.3vh;
+    background-color: var(--pink);
+    color: var(--black);
+    overflow-wrap: anywhere;
+}
+
+a {
+    background-color: inherit;
+}
+
+/* GENERIC */
+
+.bebas {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3vh;
+    background-color: inherit;
+}
+
+.text-highlight {
+    font-size: 3vh;
+    background-color: inherit;
+}
+
+/* NAV STYLES */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--nav-height);
+    background-color: var(--black);
+}
+
+.nav > .logo {
+    margin-left: var(--nav-height);
+    color: var(--white);
+}
+
+.nav > .logo-img {
+    margin-right: var(--nav-height);
+    background-color: inherit;
+    aspect-ratio: 1/1;
+    width: 5vh;
+}
+
+/* CARDS STYLES */
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - var(--nav-height));
+}
+
+.cards > * {
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 2/3;
+    height: var(--card-height);
+    border-radius: 10px;
+    transition: linear 0.2s;
+    box-shadow: 1vh 1vh var(--black); 
+}
+
+.cards > *:nth-child(1):hover {
+    transform: rotate(1deg) scale(1.06);
+}
+
+.cards > *:nth-child(2):hover {
+    transform: rotate(-0.5deg) scale(1.07);
+}
+
+.cards > *:nth-child(3):hover {
+    transform: rotate(1.5deg) scale(1.04);
+}
+
+.title {
+    border: 0.5vh solid var(--black);
+    display: flex;
+    border-radius: 10px 10px 0 0;
+    align-items: center;
+    padding-left: 2vh;
+    height: var(--title-height);
+    background-color: var(--pink-hotter);
+}
+
+.card-content {
+    border: solid var(--black);
+    border-width: 0 0.5vh 0.5vh 0.5vh;
+    height: calc(var(--card-height) - var(--title-height));
+    background-color: var(--white);
+    border-radius: 0 0 10px 10px;
+}
+
+.card-text {
+    height: calc(((var(--card-height) - var(--title-height) - 2vh)/2));
+    background-color: inherit;
+    margin: 2vh;
+}
+
+
+@media only screen and (max-width: 1125px) {
+    .cards {
+        margin-top: 2vh;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .cards > * {
+        margin-top: 2vh;
+    }
+
+    .cards > *:nth-child(1):hover {
+        transform: none;
+    }
+    
+    .cards > *:nth-child(2):hover {
+        transform: none;
+    }
+    
+    .cards > *:nth-child(3):hover {
+        transform: none;
+    }
+
+    .cards > *:nth-child(3) {
+        margin-bottom: 2vh;
+    }
+}
